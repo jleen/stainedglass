@@ -10,11 +10,12 @@ void main() {
   c.height = window.innerHeight * 2;
   canvas = c.getContext('2d') as CanvasRenderingContext2D;
   
-  var initial = <Vertex>[];
-  initial.add(Vertex(0, 0));
-  initial.add(Vertex(c.width.toDouble(), 0));
-  initial.add(Vertex(c.width.toDouble(), c.height.toDouble()));
-  initial.add(Vertex(0, c.height.toDouble()));
+  var initial = [
+      Vertex(0, 0),
+      Vertex(c.width.toDouble(), 0),
+      Vertex(c.width.toDouble(), c.height.toDouble()),
+      Vertex(0, c.height.toDouble())
+      ];
   panes.add(initial);
 
   window.requestAnimationFrame(doFrame.toJS);
